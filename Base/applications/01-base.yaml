@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: nfs-pv-creator
+  name: base
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -9,11 +9,8 @@ spec:
   project: system-utils
   source:
     repoURL: 'https://github.com/Freezl/Sandbox.git'
-    path: 01-clusterapp/02-nfs
+    path: Base/01-clusterapp/01-base
     targetRevision: master
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: nfs-client
-  syncPolicy:
-    syncOptions:
-      - CreateNamespace=true
+  syncPolicy: { }
