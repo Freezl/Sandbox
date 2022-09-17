@@ -6,7 +6,7 @@ victoria-metrics-single:
     create: false
   server:
     priorityClassName: "low-priority"
-    retentionPeriod: 6h
+    retentionPeriod: 24h
     extraArgs:
       selfScrapeInterval: "15s"
       loggerLevel: "INFO"
@@ -25,13 +25,13 @@ victoria-metrics-single:
       annotations:
         certmanager.k8s.io/cluster-issuer: monitoring-issuer
       hosts:
-        - name: "vm.kryukov.local"
+        - name: "vm.kube.local"
           path: /
           port: 9090
       tls:
         - secretName: "mon-tls"
           hosts:
-            - vm.kryukov.local
+            - vm.kube.local
       ingressClassName: system-ingress
     statefulSet:
       enabled: true

@@ -2,9 +2,9 @@ apiVersion: v2
 name: vm
 description: Victoriametrics single
 type: application
-version: 0.8.15
-appVersion: 1.72.0
+version: 0.8.37
+appVersion: 1.81.2
 dependencies:
   - name: victoria-metrics-single
-    version: 0.8.15
+    version: 0.8.37
     repository: https://victoriametrics.github.io/helm-charts
