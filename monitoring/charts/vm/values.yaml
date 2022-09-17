@@ -273,13 +273,13 @@ victoria-metrics-single:
         periodSeconds: 15
         timeoutSeconds: 5
         failureThreshold: 3
-      livenessProbe:
-        tcpSocket:
-          port: manager-http
-        initialDelaySeconds: 30
-        periodSeconds: 30
-        timeoutSeconds: 5
-        failureThreshold: 10
+      # livenessProbe:
+      #   tcpSocket:
+      #     port: manager-http
+      #   initialDelaySeconds: 30
+      #   periodSeconds: 30
+      #   timeoutSeconds: 5
+      #   failureThreshold: 10
     service:
       # -- Service annotations
       annotations: {}
